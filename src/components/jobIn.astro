@@ -1,0 +1,62 @@
+---
+const { roleWork, title, categories, bgColor, textColor, description, textFooter } = Astro.props
+---
+<section class=" flex justify-center items-center">
+    <section class="relative flex  gap-0 mx-5 py-32 pt-10 flex-col-reverse sm:flex-row justify-center sm:gap-10 lg:min-w-[1200px]">
+        <div class="relative flex justify-center items-center h-full sm:h-auto sm:w-full md:h-[28rem]">
+          
+            <div class="flex gap-20 relative  z-10 p-5 items-center justify-center">
+                <img src="/proceso.webp" alt="" class="f -left-[105%] absolute  rounded-xl animate-left-to-right lg:w-[25rem] lg:-left-[110%]  ">
+                <img src="/proceso.webp" alt="" class="f rounded-xl h-auto animate-left-to-right  lg:w-[25rem]">
+            </div>
+        </div>
+        <div class="h flex flex-col gap-4 max-w-screen-sm justify-center sm:max-w-[300px] lg:ml-0 lg:max-w-[520px]">
+            <h3 class="text-sm text-[#a5a5a5] uppercase tracking-wider font-extrabold md:text-base md:leading-7">{roleWork}</h3>
+            <p class="text-xl font-extrabold tracking-wide  text-[#4f4f4f] md:text-2xl md:leading-7">{title}</p>
+            <div class=" flex gap-3 flex-wrap">
+                {
+                    categories.map((category:string) =>(
+                    <div class="uppercase  w-fit px-4 py-1.5 rounded-xl font-medium" style={`background-color:${bgColor}; color:${textColor};`}><p>{category}</p></div>
+                    ))
+                }
+            </div>
+            <p class="text-sm font-medium">{description}</p>
+            <p class="uppercase font-extrabold text-[#bbb8b8]">{textFooter}</p>
+        </div>
+    </section>
+</section>
+
+<script>
+
+    
+
+// let tl = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:'.animated',
+//         start:'-50& center',
+//         end:'200% center',
+//         scrub:false,
+//         markers:true,
+//         toggleActions:'play reverse play'
+//     }
+// })
+// tl.to('.animated',{
+//     x:800,
+//     duration:.9
+// })
+
+// const lenis = new Lenis()
+
+// lenis.on('scroll', (e) => {
+// //   console.log(e)
+// })
+
+// function raf(time) {
+//   lenis.raf(time)
+//   requestAnimationFrame(raf)
+// }
+
+// requestAnimationFrame(raf)
+
+
+</script>
